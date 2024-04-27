@@ -1,0 +1,67 @@
+/* Logo.css */
+
+/* Logo.css */
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.logo-container img {
+    width: 80px; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Espacio a la derecha de la imagen */
+}
+
+.logo-container li {
+    list-style-type: none; /* Elimina los marcadores de lista */
+    font-size: 26px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: black; /* Color del texto */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.logo-container li img {
+    margin-right: 10px; /* Espacio a la derecha de la imagen */
+}
+
+
+/*-----menu css------*/
+
+.menu-container {
+    background: greenyellow;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-container nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem;
+}
+
+.menu-container nav ul li {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.menu-container nav ul li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.menu-container nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.menu-container nav ul li a:hover {
+    color: tomato;
+}
+
+
