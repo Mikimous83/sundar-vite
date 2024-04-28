@@ -1,36 +1,51 @@
 /* Logo.css */
 
-/* Logo.css */
-
 .logo-container {
     display: flex;
     align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    background: orangered;
+    padding: 0.5rem; /* Espacio alrededor del logo-container */
 }
 
-.logo-container img {
-    width: 80px; /* Ancho de la imagen */
-    height: auto; /* Altura automática para mantener la proporción */
-    margin-right: 10px; /* Espacio a la derecha de la imagen */
+.item {
+    display: flex;
+    flex-direction: column; /* Columnas para que la imagen esté encima del texto */
+    align-items: center; /* Alinea horizontalmente los elementos */
+    margin: 0 20px; /* Espacio entre cada item */
 }
 
-.logo-container li {
-    list-style-type: none; /* Elimina los marcadores de lista */
-    font-size: 26px; /* Tamaño del texto */
+.item img {
+    width: 30px; /* Ancho automático para mantener la proporción */
+    height: 30px; /* Altura automática para mantener la proporción */
+}
+
+.item input {
+    width: 320px; /* Ancho del input */
+    padding: 10px; /* Espacio alrededor del input */
+    border-radius: 15px;
+    border: 2px solid beige; /* Color del borde predeterminado */
+    transition: border-color 0.3s ease; /* Transición suave para el cambio de color del borde */
+    outline: none; /* Elimina el resplandor alrededor del input al recibir el enfoque */
+}
+
+.item input:focus {
+    border-color: white; /* Cambia el color del borde al blanco cuando el input recibe el enfoque */
+}
+
+.item a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: white; /* Color del texto */
+    font-size: 14px; /* Tamaño del texto */
     font-weight: bold; /* Texto en negrita */
-    color: black; /* Color del texto */
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    align-items: center; /* Alinea verticalmente los elementos */
-}
-
-.logo-container li img {
-    margin-right: 10px; /* Espacio a la derecha de la imagen */
+    margin-top: 10px; /* Agrega espacio arriba del texto */
 }
 
 
 /*-----menu css------*/
 
 .menu-container {
-    background: greenyellow;
+    background: lightgray;
     display: flex;
     justify-content: center;
 }
