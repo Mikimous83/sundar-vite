@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import Header from './header/Header.jsx'
 import Body from './body/Body.jsx'
 import './App.css'
@@ -6,10 +5,14 @@ import './App.css'
 function App() {
 
     return (
-        <div className='app-container'>
+        <>
+            <div>
             <Header/>
-            <Body/>
-        </div>
+            </div>
+            <div className='app-container'>
+                <Body/>
+            </div>
+        </>
     )
 }
 

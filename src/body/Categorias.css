@@ -1,0 +1,66 @@
+/* Estilos para el contenedor principal */
+.margen-container{
+    margin-top:40px;
+
+}
+
+.categorias-container {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal si es necesario */
+}
+
+/* Estilos para la lista */
+.categorias-list {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilos para los elementos de la lista */
+.categorias-item {
+    margin: 10px;
+    position: relative; /* Establece posición relativa */
+    text-align: center;
+    width: 150px; /* Ancho del contenedor */
+}
+
+/* Estilos para las imágenes */
+.categorias-img {
+    width: 100%; /* Ancho del 100% de su contenedor */
+    max-width: 150px; /* Máximo ancho */
+    height: auto; /* Altura automática para mantener la proporción */
+    /*margin-top: 60px; !* Margen inferior *!*/
+}
+
+/* Estilos para el botón "Lo quiero" */
+.loquiero-btn {
+    position: absolute; /* Establece posición absoluta */
+    top: 20%; /* Alinea al centro verticalmente */
+    left: 50%; /* Alinea al centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
+    opacity: 0; /* Oculta inicialmente */
+    transition: opacity 0.3s; /* Transición suave de opacidad */
+    border: none; /* Quita el borde */
+    background: orangered; /* Quita el fondo */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: 700; /* N*/
+    color: white;  /*Color del texto */
+    border-radius:5px;
+}
+
+/* Estilos para el subtítulo */
+.subtitulo {
+    width: 100%; /* Ancho del 100% de su contenedor */
+    max-width: 150px; /* Máximo ancho */
+    text-align: center; /* Centra el texto */
+    white-space: normal; /* Permitir múltiples líneas */
+    word-wrap: break-word; /* Permitir que las palabras se envuelvan */
+}
+
+/* Estilos para mostrar el botón al pasar el mouse sobre la imagen */
+.categorias-item:hover .loquiero-btn {
+    opacity: 1; /* Muestra al pasar el mouse */
+}
