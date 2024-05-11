@@ -1,0 +1,44 @@
+/**************************Central Teléfonica****************/
+.central-container-images.central-slide {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: #0f295e;
+    color: white;
+}
+
+.central-container-images.central-slide .central-item {
+    display: flex; /* Usamos flexbox para el diseño */
+    align-items: flex-start; /* Alineamos los elementos al inicio */
+    margin-bottom: 0; /* Agregamos margen inferior entre elementos */
+}
+
+.central-container-images.central-slide .central-item img {
+    width: 7%; /* Ajustamos el ancho de la imagen */
+    height: auto;
+    margin-right: 20px; /* Agregamos margen derecho para separar la imagen del texto */
+
+}
+
+.central-container-images.central-slide .central-item .text-container {
+    flex-grow: 1; /* Hacemos que ocupe todo el espacio disponible */
+}
+
+.central-container-images.central-slide .central-description-container {
+    margin-top: 10px; /* Agregamos un margen superior para separar la descripción de la lista */
+}
+
+.central-container-images.central-slide h2 {
+    font-size: 1.5rem;
+}
+
+.central-container-images.central-slide p {
+    margin-bottom: 10px;
+}
+
+.central-container-images.central-slide ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.central-container-images.central-slide ul li {
+    margin-bottom: 5px;
+}
