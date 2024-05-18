@@ -1,4 +1,4 @@
-import laptopsImage from "./assets/LAPTOPS.png"
+import laptopsImage from "../assets/LAPTOPS.png"
 const submenuLatopsNoteBooks = {
     title: "Laptops y NoteBooks",
     link: "/Laptops y Notebooks",

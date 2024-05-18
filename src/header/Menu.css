@@ -2,71 +2,92 @@
 
 .logo-container {
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
-    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;
+    justify-content: center;
     background: orangered;
-    padding: 0.5rem; /* Espacio alrededor del logo-container */
+    padding: 0.5rem;
+    width: 100%; /* Hacer que el div ocupe todo el ancho */
+    position: fixed; /* Fijar el contenedor */
+    top: 0; /* Colocarlo en la parte superior */
+    left: 0; /* Asegurar que esté a la izquierda */
+    z-index: 9999; /* Por encima de todos los demás elementos */
 }
 
 .item {
     display: flex;
-    flex-direction: column; /* Columnas para que la imagen esté encima del texto */
-    align-items: center; /* Alinea horizontalmente los elementos */
-    margin: 0 20px; /* Espacio entre cada item */
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px; /* Aumentado el espacio entre los elementos */
 }
 
 .item img {
-    width: 30px; /* Ancho automático para mantener la proporción */
-    height: 30px; /* Altura automática para mantener la proporción */
+    width: 25px; /* Reducido el tamaño de la imagen */
+    height: 25px;
 }
 
 .item input {
-    width: 320px; /* Ancho del input */
-    padding: 10px; /* Espacio alrededor del input */
-    border-radius: 15px;
-    border: 2px solid beige; /* Color del borde predeterminado */
-    transition: border-color 0.3s ease; /* Transición suave para el cambio de color del borde */
-    outline: none; /* Elimina el resplandor alrededor del input al recibir el enfoque */
+    width: 250px; /* Reducido el ancho del input */
+    padding: 5px; /* Ajustado el padding */
+    border-radius: 12px; /* Reducido el radio del borde */
+    border: 2px solid beige;
+    transition: border-color 0.3s ease;
+    outline: none;
 }
 
 .item input:focus {
-    border-color: white; /* Cambia el color del borde al blanco cuando el input recibe el enfoque */
+    border-color: white;
 }
 
 .item a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: white; /* Color del texto */
-    font-size: 14px; /* Tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    margin-top: 10px; /* Agrega espacio arriba del texto */
+    text-decoration: none;
+    color: white;
+    font-size: 12px; /* Reducido el tamaño del texto */
+    font-weight: bold;
+    margin-top: 8px; /* Ajustado el espacio arriba del texto */
 }
 
+/* Contenedor para los elementos a la derecha */
+.right-elements {
+    display: flex;
+    align-items: center;
+}
+
+.item a {
+    font-size: 10px; /* Reducido el tamaño del texto */
+    margin-top: 5px; /* Ajustado el espacio arriba del texto */
+}
 
 /*-----menu css------*/
 
 .menu-container {
     background: lightgray;
-    display: flex;
-    justify-content: center;
+    width: 100%; /* Hacer que el menú ocupe todo el ancho */
+    position: fixed; /* Fijar el menú */
+    top: 80px; /* Espacio para el contenedor del logo */
+    left: 0; /* Asegurar que esté a la izquierda */
+    z-index: 9998; /* Por encima del menú */
 }
 
 .menu-container nav ul {
     display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos del menú se envuelvan */
+    justify-content: center;
     list-style-type: none;
     padding: 0;
-    margin: 1rem;
+    margin: 0;
 }
 
 .menu-container nav ul li {
     display: flex;
-    align-items: center;
-    margin-right: 20px;
+    align-items: normal;
+    margin: 10px; /* Espacio entre elementos */
+    color: black;
 }
 
 .menu-container nav ul li img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 25px; /* Reducido el tamaño de la imagen */
+    height: 25px;
+    margin-right: 5px; /* Ajustado el espacio entre imagen y texto */
 }
 
 .menu-container nav ul li a {
@@ -79,4 +100,94 @@
     color: tomato;
 }
 
+/* Media query para mostrar u ocultar el menú en función del ancho de la pantalla */
+@media only screen and (max-width: 600px) {
+    .item:not(:first-child) {
+        display: none; /* Ocultar todos los elementos excepto el primer hijo */
+    }
 
+    .menu-container {
+        display: flex; /* Cambiar a flex para que el menú ocupe el ancho */
+        justify-content: center; /* Centrar el menú horizontalmente */
+    }
+
+    .menu-container nav ul li {
+        margin: 5px; /* Espacio entre elementos */
+    }
+}
+
+/************estilos submenu ****************/
+.has-submenu {
+    position: relative;
+}
+
+.main-link {
+    display: inline-block;
+}
+
+.submenu-container {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    width: 100%;
+    max-width: 1400px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+
+}
+
+.has-submenu:hover .submenu-container {
+    display: block;
+}
+
+.submenu-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+
+.submenu-column {
+    background-color: orangered;
+    padding: 10px;
+}
+
+
+.submenu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.submenu-column li{
+    margin-bottom: 15px;
+    color: #0f295e;
+}
+.submenu-item-color {
+    color: white;
+}
+
+.submenu-item-color:hover {
+    color: yellow;
+}
+
+
+@media (max-width: 1200px) {
+    .submenu-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .submenu-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .submenu-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,81 +1,131 @@
-ul,
-li {
-    list-style: none;
-    white-space: nowrap;
+/* Slider.css */
+
+/* Main container */
+.main-container-slider {
+    max-width: 100%;
+    position: relative;
+    border-radius: 10px;
+    z-index: 1; /* Asegura que el slider esté por encima del menú */
 }
 
-li {
+.main-container-slider ul,
+.main-container-slider li {
+    list-style: none;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container-slider li {
     display: inline;
 }
 
-img {
-    margin-top: -16px;
-}
-
-/* Main container */
-
-.main-container {
+.main-container-slider img {
     width: 100%;
-    height: 280px;
-    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* Slider container */
-.slider-container {
-    position: relative;
-    height: 100%
+.container-images-slider {
+    margin-top: 20px; /* Ajuste del margen superior */
 }
 
-/* dots carrusel */
-.dots-container {
+.container-images-slider ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    overflow-x: scroll; /* Permite el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos móviles */
+    scroll-snap-type: x mandatory; /* Habilita el snap para desplazarse de imagen en imagen */
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.container-images-slider li {
+    flex: 0 0 100%; /* Cada imagen ocupa el 100% del ancho */
+    scroll-snap-align: center; /* Centra la imagen cuando se detiene el desplazamiento */
+}
+
+.container-images-slider ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
+.container-images-slider li img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Dots carrusel */
+.dots-container-slider {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-.dot-container-item {
-    margin: 8px 3px;
+.dot-container-item-slider {
+    margin: 3px;
     cursor: pointer;
     font-size: 12px;
     text-align: center;
     color: #ccc;
 }
 
-/* Arrows */
-.leftArrow {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    left: 32px;
-    font-size: 50px;
-    font-weight: 700;
-    color: #fff;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.rightArrow {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    right: 32px;
-    font-size: 50px;
-    font-weight: 700;
-    color: #fff;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.container-images {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    overflow: hidden;
-}
-
-div.active {
+.dot-container-item-slider.active {
     color: black;
     width: 15px;
-    height: 15px;
+    height: 10px;
     border-radius: 50%;
+}
+
+/* Arrows */
+.leftArrow-slider,
+.rightArrow-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.leftArrow-slider {
+    left: 32px;
+}
+
+.rightArrow-slider {
+    right: 32px;
+}
+
+/* Disabled arrows */
+.leftArrow-slider.disabled,
+.rightArrow-slider.disabled {
+    color: #888; /* Adjust the color as needed */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+/* Media query para hacer responsive */
+@media only screen and (max-width: 768px) {
+    .main-container-slider {
+        margin-top: 160px; /* Ajuste del margen superior */
+    }
+
+    .menu-container {
+        z-index: 999; /* Asegurar que el menú esté por encima del slider */
+        position: fixed; /* Mantener el menú fijo en la parte superior */
+        width: 100%; /* Hacer que el menú ocupe todo el ancho */
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .main-container-slider {
+        margin-top: 125px; /* Ajuste del margen superior */
+    }
 }

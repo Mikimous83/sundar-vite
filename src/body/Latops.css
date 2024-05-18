@@ -1,0 +1,224 @@
+.latop-main-container {
+    margin-top: 10px; /* Mantenemos el margen superior */
+    max-width: 1400px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    /*background: greenyellow;*/
+    padding-bottom: 15px; /* Agregamos un espacio de 15px en la parte inferior */
+}
+
+@media (max-width: 768px) {
+    .latop-main-container {
+        margin-top: 5px; /* Ajustamos el margen superior para dispositivos más pequeños */
+        padding: 0 10px; /* Ajustamos el padding para evitar que el contenido se desborde */
+    }
+}
+
+
+/***************titulo****************/
+.latop-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    max-width: 100%;
+    border-radius: 15px;
+    color: #fff;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, orangered, rgba(255, 255, 255, 0) 90%);
+    position: relative;
+}
+
+
+/***************imagenes************/
+.latop-slide-container {
+    display: flex;
+    flex-wrap: wrap; /* Para que los contenedores de imágenes se ajusten automáticamente */
+    justify-content: center; /* Para centrar los contenedores */
+}
+
+.latop-container-images {
+    margin: 10px; /* Ajustamos el margen entre las imágenes */
+    /*border: 2px solid #ccc;*/
+    border-radius: 8px;
+    overflow: hidden; /* Para ocultar cualquier contenido que exceda el tamaño del contenedor */
+    position: relative;
+    width: 300px; /* Ancho fijo de cada contenedor de imagen */
+    transition: border-color 0.3s; /* Transición para el cambio de color de borde */
+}
+
+.latop-container-images:hover {
+    /*border-color: orangered; !* Cambiamos el color de borde al pasar el mouse *!*/
+}
+
+.latop-image-container {
+    position: relative;
+}
+
+.latop-image-container img {
+    width: 100%; /* Para asegurar que la imagen ocupe todo el espacio del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Evitar espacios vacíos debajo de la imagen */
+}
+
+.latop-image-detail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 10px; /* Ajustamos el relleno */
+    box-sizing: border-box;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.latop-container-images:hover .latop-image-detail {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.latop-image-detail h3,
+.latop-image-detail p {
+    margin: 5px 0; /* Ajustamos el margen */
+}
+
+.latop-oferta {
+    font-weight: bold; /* Hacemos la oferta en negrita */
+    color: orangered; /* Color de la oferta */
+    font-size: 22px; /* Tamaño de la oferta */
+}
+.latop-subrayar-precio{
+    text-decoration: line-through;
+    color: darkgrey;
+    font-size:18px;
+    font-weight:normal;
+    margin-left: 10px;
+
+}
+
+@media (max-width: 768px) {
+    .latop-container-images {
+        width: calc(50% - 20px);
+        margin: 5px;
+    }
+}
+
+/**********************BUTTONS**************/
+.latop-nav-buttons {
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.latop-leftArrow, .latop-rightArrow {
+    cursor: pointer;
+    font-size: 50px; /* Ajustamos el tamaño de la fuente */
+    padding: 0px 0px; /* Ajustamos el padding */
+    border-radius: 5px;
+    color: orangered;
+}
+
+.latop-leftArrow:hover, .latop-rightArrow:hover {
+    color: orangered;
+}
+
+
+/***********************information****************/
+.latop-slide-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.latop-container-images {
+    margin-right: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    transition: box-shadow 0.3s; /* Agregamos una transición para la sombra */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0); /* Inicialmente sin sombra */
+}
+
+.latop-container-images:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Al pasar el mouse, se muestra la sombra */
+}
+
+.latop-container-images:last-child {
+    margin-right: 0;
+}
+
+.latop-image-container {
+    position: relative;
+}
+
+.latop-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.latop-details-container {
+    background-color: white;
+    color: #6c757d;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}
+
+.latop-details-container:hover ~ .latop-container-images {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Al pasar el mouse sobre los detalles, se muestra la sombra */
+}
+
+.latop-details-container h3,
+.latop-details-container p {
+    margin: 5px 0;
+}
+
+.latop-button-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.latop-button-comprar {
+    background: orangered;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.latop-button-comprar:hover {
+    background-color: orange;
+}
+
+/***********banner****************/
+.latop-banner img{
+    margin-right: 10px; /* Ajusta el valor según el espacio deseado */
+    width: 100%;
+    height: 200px;
+}
+
+
+.latop-container * {
+    width: 100%; /* Ancho igual al 100% del viewport width */
+    height: 250px; /* Alto igual al 100% del viewport height */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+    margin-top: 0px; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    overflow: hidden; /* Evita el desbordamiento de la imagen */
+    border-radius: 8px;
+}

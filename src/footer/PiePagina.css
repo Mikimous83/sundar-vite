@@ -1,8 +1,13 @@
 /* Piepagina.css */
 
 .pie-pagina-container {
-    width: 100%;
-    background-color: #f0f0f0; /* Color de fondo */
-    padding: 20px 0; /* Espaciado interno */
-    text-align: center; /* Centrado del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightgray;
+    padding: 1rem;
+    /*width: 100%;*/
+    bottom: 0; /* Colocarlo en la parte inferior */
+    left: 0; /* Asegurar que esté a la izquierda */
+
 }

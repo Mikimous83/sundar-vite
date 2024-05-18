@@ -1,6 +1,6 @@
 /* Estilos para el contenedor principal */
-.margen-container{
-    margin-top:40px;
+.margen-container-cat{
+    margin-top:5px;
 
 }
 
@@ -49,10 +49,17 @@
     font-weight: 700; /* N*/
     color: white;  /*Color del texto */
     border-radius:5px;
+    white-space: nowrap;
 }
 
+.loquiero-btn:active {
+    background-color: darkblue; /* Cambia el color de fondo al hacer clic */
+    /*color: white; !* Cambia el color del texto al hacer clic *!*/
+}
+
+
 /* Estilos para el subtítulo */
-.subtitulo {
+.subtitulo-cat {
     width: 100%; /* Ancho del 100% de su contenedor */
     max-width: 150px; /* Máximo ancho */
     text-align: center; /* Centra el texto */

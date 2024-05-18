@@ -1,4 +1,4 @@
-import './Piepagina.css';
+import './PiePagina.css';
 
 const Piepagina = () => {
     return (

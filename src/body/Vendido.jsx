@@ -1,8 +1,8 @@
-import './Vendido.css';
-import {useEffect, useRef, useState} from "react";
-import {dataVendido} from './assets/Vendido.js';
+import { useEffect, useRef, useState } from 'react'
+import { dataVendido } from './assets/Vendido.js'
+import './Vendido.css'
 
-const Slider = () => {
+const Vendido = () => {
     const listRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleImages, setVisibleImages] = useState([]);
@@ -44,29 +44,36 @@ const Slider = () => {
     };
 
     return (
-        <div className='main-container'>
-            <div className='title-container'>
-                <h1>Lo <span className='mas'>Más</span> Vendido</h1>
+        <div className='sold-main-container'>
+            <div className='sold-title-container'>
+                <h1>Lo <span className='sold-mas'>Más</span> Vendido</h1>
             </div>
-            <div ref={listRef} className="slide-container">
+            <div ref={listRef} className="sold-slide-container">
                 {visibleImages.map((item, index) => (
                     <div
                         key={index}
-                        className={`container-images slide ${hoveredIndex === index ? 'hovered' : ''}`}
+                        className={`sold-container-images sol-slide`}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <img src={item.imgUrl} alt={`Imagen ${index}`}/>
+                        <div className="sold-image-container">
+                            <img src={item.imgUrl} alt={`Imagen ${index}`} className={hoveredIndex === index ? "sold-girado" : ""} />
+                        </div>
+                        <div className={`sold-image-detail ${hoveredIndex === index ? "sold-visible" : ""}`}>
+                            <h3>{item.description}</h3>
+                            <p><span className="sold-oferta">{item.oferta}</span> <span className="sold-precio">{item.precio}</span></p>
+                            <br/>
+                            <button className={`sold-button-comprar ${hoveredIndex === index ? "sold-button-hover" : ""}`} onClick={() => console.log("Comprar")}>Comprar</button>
+                        </div>
                     </div>
                 ))}
             </div>
-
-            <div className='nav-buttons'>
-                <div className='leftArrow' onClick={() => scrollToImage('prev')}>&#10092;</div>
-                <div className='rightArrow' onClick={() => scrollToImage('next')}>&#10093;</div>
+            <div className='sold-nav-buttons'>
+                <div className='sold-leftArrow' onClick={() => scrollToImage('prev')}>&#10092;</div>
+                <div className='sold-rightArrow' onClick={() => scrollToImage('next')}>&#10093;</div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Slider;
+export default Vendido

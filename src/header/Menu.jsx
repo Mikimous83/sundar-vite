@@ -1,10 +1,11 @@
 import './Menu.css'
-import laptopsImage from './assets/LAPTOPS.png'
-import computersImage from './assets/COMPUTADORAS.png'
-import gamerImage from './assets/GAMER.png'
-import partesPCImage from './assets/PARTESPC.png'
-import monitoresImage from './assets/MONITORES.png'
-import impresorasImage from './assets/IMPRESORAS.png'
+import Submenu from "./Submenu"
+import submenuLatopsNoteBooks from "./Submenu/submenuLatopsNoteBooks.js"
+import submenuComputadoras from "./Submenu/submenuComputadoras.js"
+import submenuZonaGamer from "./Submenu/submenuZonaGamer.js"
+import submenuPartesPC from "./Submenu/submenuPartesPC.js"
+import submenuMonitores from "./Submenu/submenuMonitores.js"
+import submenuImpresoras from "./Submenu/submenuImpresoras.js"
 
 const Menu = () => {
     return (
@@ -12,13 +13,44 @@ const Menu = () => {
             <div className="menu-container">
                 <nav>
                     <ul>
-                        <li><a href="/">Categorías</a></li>
-                        <li><img src={laptopsImage} alt="Laptops y Notebooks"/><a href="/about">Laptos y NoteBooks</a></li>
-                        <li><img src={computersImage} alt="Computadoras"/><a href="/contact">Computadoras</a></li>
-                        <li><img src={gamerImage} alt="Zona Gamer"/><a href="/blog">Zona Gamer</a></li>
-                        <li><img src={partesPCImage} alt="Partes de PC"/><a href="/blog">Partes de PC</a></li>
-                        <li><img src={monitoresImage} alt="Monitores"/><a href="/blog">Monitores y Más</a></li>
-                        <li><img src={impresorasImage} alt="Impresoras"/><a href="/blog">Impresoras</a></li>
+                        <li className="has-submenu"><a href="/">Categorías</a></li>
+                        <Submenu
+                            image={submenuLatopsNoteBooks.image}
+                            link={submenuLatopsNoteBooks.link}
+                            title={submenuLatopsNoteBooks.title}
+                            columns={submenuLatopsNoteBooks.columns}
+                        />
+                        <Submenu
+                            image={submenuComputadoras.image}
+                            link={submenuComputadoras.link}
+                            title={submenuComputadoras.title}
+                            columns={submenuComputadoras.columns}
+                        />
+                        <Submenu
+                            image={submenuZonaGamer.image}
+                            link={submenuZonaGamer.link}
+                            title={submenuZonaGamer.title}
+                            columns={submenuZonaGamer.columns}
+                        />
+                        <Submenu
+                            image={submenuPartesPC.image}
+                            link={submenuPartesPC.link}
+                            title={submenuPartesPC.title}
+                            columns={submenuPartesPC.columns}
+                        />
+                        <Submenu
+                            image={submenuMonitores.image}
+                            link={submenuMonitores.link}
+                            title={submenuMonitores.title}
+                            columns={submenuMonitores.columns}
+                        />
+                        <Submenu
+                            image={submenuImpresoras.image}
+                            link={submenuImpresoras.link}
+                            title={submenuImpresoras.title}
+                            columns={submenuImpresoras.columns}
+                        />
+
                     </ul>
                 </nav>
             </div>

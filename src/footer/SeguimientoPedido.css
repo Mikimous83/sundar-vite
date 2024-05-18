@@ -1,0 +1,100 @@
+.sp-row {
+    max-width: 1400px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Margen automático para centrar el contenedor */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0; /* Espacio entre columnas y filas */
+}
+
+.sp-amplitud{
+    width:100%;
+    background: #f0f0f0;
+}
+.sp-column {
+    padding: 20px;
+    background-color: #f0f0f0; /* Color de fondo */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+}
+
+.sp-column h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Reducir el espacio entre el título y el primer enlace */
+}
+
+.sp-column p {
+    margin-top: 0; /* Eliminar el margen superior del párrafo */
+    margin-bottom: 5px; /* Reducir el espacio entre el párrafo y el siguiente elemento */
+}
+
+.sp-column a {
+    color: #333;
+    text-decoration: none;
+}
+
+.sp-input {
+    margin-bottom: 5px; /* Reducir el espacio entre el input y el botón */
+    padding: 5px;
+    width: calc(100% - 10px); /* Ajuste del ancho con el espacio de 5px */
+}
+
+.sp-button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.sp-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.sp-img {
+    width: 50px; /* Tamaño de la imagen */
+    height: 50px; /* Tamaño de la imagen */
+    border-radius: 50%;
+    padding: 10px; /* Relleno para centrar la imagen */
+    transition: filter 0.3s, background-color 0.3s, width 0.3s, height 0.3s; /* Ajuste la transición */
+    cursor: pointer;
+}
+
+.sp-img:hover {
+    filter: brightness(80%);
+    background-color: rgba(255, 165, 0, 0.5); /* Cambia el color de fondo al pasar el mouse */
+}
+
+.sp-column:last-child {
+    display: flex;
+    flex-direction: column; /* Cambia la disposición a columna */
+    justify-content: center; /* Centra verticalmente los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+    position: relative; /* Permite posicionar el texto "SÍGANOS" */
+}
+
+.sp-follow-text {
+    margin-bottom: 5px; /* Cambia el margen inferior */
+    font-weight: bold;
+}
+
+.sp-img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+/* Media query para ajustar el tamaño de las imágenes en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .sp-img {
+        width: 40px; /* Tamaño de la imagen en pantallas más pequeñas */
+        height: 40px; /* Tamaño de la imagen en pantallas más pequeñas */
+        padding: 8px; /* Ajustar el relleno para pantallas más pequeñas */
+    }
+}

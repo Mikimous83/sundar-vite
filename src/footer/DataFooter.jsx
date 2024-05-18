@@ -1,8 +1,9 @@
+// DataFooter.jsx
 import {useRef} from 'react';
-import './CentralTelefonica.css'; // Asegúrate de tener un archivo CSS para los estilos
-import {dataCentralTelfonica} from './assets/CentralTelefonica.js'; // Importa los datos
+import './DataFooter.css';
+import {dataCentral} from './assets/DataFooter'; // No necesitas especificar la extensión del archivo
 
-const CentralTelefonica = () => {
+const DataFooter = () => {
     const containerRef = useRef(null);
 
     const handleMouseEnter = () => {
@@ -18,71 +19,48 @@ const CentralTelefonica = () => {
     };
 
     return (
-        <div
-            ref={containerRef}
-            className="central-container-images central-slide"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            {dataCentralTelfonica.map((data) => (
-                <div key={data.id} className="central-item"> {/* Agregamos una clase central-item */}
-                    <img src={data.image} /> {/* Movemos la imagen al principio */}
-                    <div className="central-text-container">
-                        <h2>{data.name}</h2>
-                        <p>{data.number}</p>
-                        <div className="central-description-container">
-                            <p>{data.description}</p>
-                            <ul>
-                                <li>{data.p1}</li>
-                                <li>{data.p2}</li>
-                                <li>{data.p3}</li>
-                                <li>{data.p4}</li>
-                                <li>{data.p5}</li>
-                                <li>{data.p6}</li>
-                                <li>{data.p7}</li>
-                                <li>{data.p8}</li>
-                                <li>{data.p9}</li>
-                            </ul>
+        <div className='todo-width'>
+            <div
+                ref={containerRef}
+                className="central-container-images central-slide"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {dataCentral.map((data) => (
+                    <div key={data.id} className="central-item">
+                        <img src={data.image} alt={data.name}/>
+                        <div className="text-container">
+                            <h2>{data.name}</h2>
+                            {data.number && <p>{data.number}</p>}
+                            {data.description && <p>{data.description}</p>}
+                            {data.details && (
+                                <div className="central-description-container">
+                                    <ul>
+                                        {data.details.map((detail, index) => (
+                                            <li key={index}>{detail}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {data.email && <p>Email: {data.email}</p>}
+                            {data.subtitle && <p>{data.subtitle}</p>}
+                            {data.location && <p>{data.location}</p>}
+                            {data.address && <p>{data.address}</p>}
+                            {data.phone && <p>Phone: {data.phone}</p>}
+                            {data.contact && <p>Contact: {data.contact}</p>}
+                            {data.logos && (
+                                <div className="logos-container">
+                                    {data.logos.map((logo, index) => (
+                                        <img key={index} src={logo} alt={`Logo ${index + 1}`}/>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
-
-                    <div className="online-text-container">
-                        <h2>{data.titulo}</h2>
-                        <p>{data.email}</p>
-                        <div className="online-description-container">
-                            <p>{data.logo}</p>
-                            <ul>
-                                <li><img src={data.libro} alt=""/></li>
-                                <li><img src={data.ccl} alt=""/></li>
-                                <li><img src={data.garantia} alt=""/></li>
-                                <li><img src={data.anos} alt=""/></li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="tiendas-text-container">
-                        <h2>{data.title}</h2>
-                        <p>{data.subtitle}</p>
-                        <div className="tiendas-description-container">
-                            <p>{data.contacto}</p>
-                            <ul>
-                                <li>{data.ubicacion}</li>
-                                <li>{data.address}</li>
-                                <li>{data.telefono}</li>
-                                <li>{data.correo}</li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
-        ;
-
-
 }
 
-export default CentralTelefonica;
+export default DataFooter;
